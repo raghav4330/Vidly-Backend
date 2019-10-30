@@ -1,0 +1,16 @@
+This is the way we are performing for returns.js .
+FIrstly we write the test cases for below mentioned cases and develop code.
+
+POST/api/returns  {customerId, movieId}
+
+- return 401 if client not logged in
+- return 400 if customerId not provided
+- return 400 if movieId not provided
+- return 404 if no rental found for this customer/movie
+- return 400 if rental already processed
+- return 200 if valid request
+
+-set the rental date
+-calculate rental fee
+-increase the stock
+-return the rental
