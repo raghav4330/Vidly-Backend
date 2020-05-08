@@ -6,7 +6,9 @@ const winston = require('winston');
 module.exports = function(){
     winston.handleExceptions(
         new winston.transports.Console({colorize: true, prettyPrint: true}),
-        new winston.transports.File({filename: 'uncaughtExceptions.log'}));
+        new winston.transports.File({filename: 'uncaughtExceptions.log'})
+    );
+
     process.on('unhandledRejection',(ex)=>{ 
         throw ex;
     }); // because winston have method to catch exceptions and not rejections...so this a way out.
